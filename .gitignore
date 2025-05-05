@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# local file storage
+output/
+tmp/
+logs/
+

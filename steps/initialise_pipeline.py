@@ -1,7 +1,7 @@
 from typing import Dict, List, Union, Tuple
 import os
 
-from shared import load_json, load_config
+from shared import load_config
 
 
 def initialise_pipeline():

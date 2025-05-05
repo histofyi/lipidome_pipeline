@@ -1,0 +1,66 @@
+pdb_code	antigenic_pdb_ligand_code	spacer_pdb_ligand_code1	spacer_pdb_ligand_code2	receptors	secondary_receptors	isoform	species	resolution
+7SH4	MW9					cd1a	human	2
+7RYO	WGR			gamma_delta		cd1a	human	3
+7RYN	CIS			gamma_delta		cd1a	human	2.7
+7RYM	ENDOG			gamma_delta		cd1a	human	3.2
+7KP1	FO4					cd1a	human	2.02
+7KP0	WUA					cd1a	human	2.4
+7KOZ	WU7					cd1a	human	2.25
+6NUX	FOF					cd1a	human	2.2
+5J1A	6F8					cd1a	human	1.86
+4X6F	3XU					cd1a	human	1.91
+4X6E	42H					cd1a	human	2.1
+4X6D_B	PAM			alpha_beta		cd1a	human	2.98
+4X6D_A	OLA			alpha_beta		cd1a	human	2.98
+4X6C	42H			alpha_beta		cd1a	human	2.8
+1XZ0	JHO					cd1a	human	2.8
+1ONQ	SLF					cd1a	human	2.15
+8GLI	ZR2					cd1b	human	2.1
+8GLH	3IY	3IV				cd1b	human	1.83
+8GLG	L9Q	CUY				cd1b	human	1.6
+8GLF	3LY	6UL				cd1b	human	2
+8GLE	SGF	CUY				cd1b	human	1.85
+8DV4	PIE	CUY		alpha_beta		cd1b	human	2.4
+8DV3	PIE	6UL				cd1b	human	1.9
+6D64	POV	CUY				cd1b	human	1.7
+6CUG	POV	CUY		alpha_beta		cd1b	human	2.4
+5WL1	D3D	CUY				cd1b	human	1.38
+5WKI	D3D	CUY		alpha_beta		cd1b	human	2.75
+5WKG	D21	CUY				cd1b	human	2.06
+5WKE	P50	CUY				cd1b	human	1.69
+5L2K	70E	6UL		alpha_beta		cd1b	human	3.2
+5L2J	70E	6UL				cd1b	human	1.65
+3T8X	T8X	ULI				cd1b	human	1.9
+2H26	6PL	6UL				cd1b	human	1.8
+1UQS	GMM					cd1b	human	3.1
+1GZQ	PII	TWT	D12			cd1b	human	2.26
+1GZP	GM2	TWT	D12			cd1b	human	2.8
+7MXH	ZQ7	ZP7				cd1c	human	2.11
+7MXF	ZQ4	ZP7				cd1c	human	2
+7MX4	ZPD	ZP7	D12			cd1c	human	1.73
+6C15	6PL	D12				cd1c	human	3.21
+6C09	EKG	D10		alpha_beta		cd1c	human	2.95
+5C9J	STE	DAO				cd1c	human	2.4
+4ONO	PMK					cd1c	human	2.71
+3OV6	MK0	D12				cd1c	human	2.5
+8SGM	A1AHF			alpha_beta_nk		cd1d	human	2.5
+8SGB	FO4			alpha_beta_nk		cd1d	human	2.8
+8SOS	FO4			vhh_nanobody		cd1d	human	2.33
+6V80	AGH			alpha_beta_nk	vhh_nanobody	cd1d	human	3.53
+6V7Z	AGH			vhh_nanobody		cd1d	human	2.75
+6V7Y	AGH			vhh_nanobody		cd1d	human	2.4
+4WWK	JLS			alpha_beta_nk		cd1d	human	3.1
+4WW2	JLS			alpha_beta_nk		cd1d	human	2.48
+4WO4	JLS			delta_alpha_beta		cd1d	human	2.5
+4MQ7	CIS					cd1d	human	2.6
+4LHU	JLS			gamma_delta		cd1d	human	2.87
+4EN3	AGH			alpha_beta_nk		cd1d	human	2.57
+3VWK	4GH			alpha_beta_nk		cd1d	human	2.94
+3VWJ	DB3			alpha_beta_nk		cd1d	human	3.09
+4EI5	CIS			alpha_beta_nk		cd1d	human	3.1
+3U0P	LSC	UND	HEX			cd1d	human	2.8
+3TZV	LSC	D12	HEX	alpha_beta_nk		cd1d	human	3.06
+3SDX	GCY			alpha_beta_nk		cd1d	human	3.12
+3HUJ	AGH			alpha_beta_nk		cd1d	human	2.5
+2PO6	AGH			alpha_beta_nk		cd1d	human	3.2
+1ZT4	AGH					cd1d	human	3

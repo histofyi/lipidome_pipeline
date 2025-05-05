@@ -1,4 +1,5 @@
 from typing import Dict, List, Union, Tuple
+import csv
 import os
 import json
 
@@ -43,3 +44,22 @@ def load_config() -> Tuple[Dict, bool, List[str]]:
     if not success:
         errors.append(f"Failed to load configuration from {config_path}.")
     return config, success, errors
+
+
+def load_structure_information() -> List[Dict]:
+    """
+    Load structure information from a TSV file.
+
+    Returns:
+        List[Dict]: A list of dictionaries containing structure information.
+    """
+    # Load structure information from a TSV file
+    information_filepath = 'input/structures.tsv'
+    if os.path.exists(information_filepath):
+        with open(information_filepath, 'r') as f:
+            reader = csv.DictReader(f, delimiter='\t')
+            structures = [row for row in reader]
+    else:
+        structures = []
+        print(f"File {information_filepath} does not exist.")
+    return structures

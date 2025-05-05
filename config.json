@@ -1,0 +1,8 @@
+{
+    "paths": {
+        "tmp": "tmp",
+        "output": "output",
+        "input": "input",
+        "logs": "logs"
+    }
+}

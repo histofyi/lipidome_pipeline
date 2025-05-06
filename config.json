@@ -4,10 +4,12 @@
         "output": "output",
         "input": "input",
         "logs": "logs",
-        "canonical_structures": "input/canonical_structures"
+        "canonical_structures": "input/canonical_structures",
+        "raw_structures": "tmp/structures/raw",
+        "aligned_structures": "output/structures/aligned"
     },
     "canonical_structures": {
-        "class_i": "1hhk",
+        "alignment": "1onq_alignment",
         "cd1a": "1onq",
         "cd1b": "1gzp",
         "cd1c": "3ov6",

@@ -14,5 +14,6 @@
         "cd1b": "1gzp",
         "cd1c": "3ov6",
         "cd1d": "1zt4"
-    }
+    }, 
+    "isoforms": ["cd1a", "cd1b", "cd1c", "cd1d"]
 }

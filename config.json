@@ -3,6 +3,14 @@
         "tmp": "tmp",
         "output": "output",
         "input": "input",
-        "logs": "logs"
+        "logs": "logs",
+        "canonical_structures": "input/canonical_structures"
+    },
+    "canonical_structures": {
+        "class_i": "1hhk",
+        "cd1a": "1onq",
+        "cd1b": "1gzp",
+        "cd1c": "3ov6",
+        "cd1d": "1zt4"
     }
 }

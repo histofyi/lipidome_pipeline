@@ -128,7 +128,6 @@ def process_structure(config, pdb_code, isoform, lipid_names):
 
     # Save the lipid molecules
     # TODO: make this iterative and driven by the lipids in the structure file
-    # TODO: make an all lipid mode too
     lipid_code = 'SLF'
     filename =  f"{generate_facet_folder_path(config, 'lipid', isoform)}/{pdb_code}_{lipid_code.lower()}.pdb"
     io.save(filename, select=LipidSelect('SLF'))
@@ -138,6 +137,10 @@ def process_structure(config, pdb_code, isoform, lipid_names):
     filename =  f"{generate_facet_folder_path(config, 'lipid', isoform)}/{pdb_code}_all.pdb"
     io.save(filename, select=AllLipidSelect(lipid_codes))
 
+    #TODO: save the ABDs only
+    #TODO: save the receptor only
+    #TODO: make the extracellular domain selection more robust, removing the receptors
+    #TODO: save the hetatm only (no lipids or waters)
     
 
 

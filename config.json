@@ -6,7 +6,13 @@
         "logs": "logs",
         "canonical_structures": "input/canonical_structures",
         "raw_structures": "tmp/structures/raw",
-        "aligned_structures": "output/structures/aligned"
+        "aligned_structures": "output/structures/aligned",
+        "extracellular_domain_structures": "output/structures/extracellular_domains",
+        "antigen_binding_domain_structures": "output/structures/antigen_binding_domains",
+        "lipid_structures": "output/structures/lipids",
+        "water_structures": "output/structures/water",
+        "hetatm_structures": "output/structures/hetatm",
+        "receptor_structures": "output/structures/receptors"
     },
     "canonical_structures": {
         "alignment": "1onq_alignment",
@@ -15,5 +21,13 @@
         "cd1c": "3ov6",
         "cd1d": "1zt4"
     }, 
-    "isoforms": ["cd1a", "cd1b", "cd1c", "cd1d"]
+    "isoforms": ["cd1a", "cd1b", "cd1c", "cd1d"], 
+    "structure_facets": [
+        "extracellular_domain",
+        "antigen_binding_domain",
+        "lipid",
+        "water",
+        "hetatm",
+        "receptor"
+    ]
 }

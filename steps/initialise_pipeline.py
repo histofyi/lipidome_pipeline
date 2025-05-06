@@ -11,12 +11,13 @@ def initialise_pipeline():
     if success:
         print("Configuration loaded successfully.")
 
-        for path in config["paths"]:
-            if not os.path.exists(path):
-                os.makedirs(path)
-                print(f"Created directory: {path}")
+        for path in config['paths']:
+            this_path = config["paths"][path]   
+            if not os.path.exists(this_path):
+                os.makedirs(this_path)
+                print(f"Created directory: {this_path}")
             else:
-                print(f"Directory already exists: {path}")
+                print(f"Directory already exists: {this_path}")
 
 
 if __name__ == "__main__":

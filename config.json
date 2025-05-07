@@ -31,6 +31,24 @@
         "hetatm",
         "receptor"
     ],
+    "abd_breakpoints":{
+        "cd1a": {
+            "alpha2end": "RQV",
+            "alpha3start": "KPE"
+        },
+        "cd1b": {
+            "alpha2end": "RQV",
+            "alpha3start": "KPE"
+        },
+        "cd1c": {
+            "alpha2end": "RQV",
+            "alpha3start": "KPE"
+        },
+        "cd1d": {
+            "alpha2end": "KQV",
+            "alpha3start": "KPK"
+        }
+    },
     "sequences": {
         "cd1a": {
             "sequence": "PLSFHVIWIASFYNHSWKQNLVSGWLSDLQTHTWDSNSSTIVFLWPWSRGNFSNEEWKELETLFRIRTIRSFEGIRRYAHELQFEYPFEIQVTGGCELHSGKVSGSFLQLAYQGSDFVSFQNNSWLPYPVAGNMAKHFCKVLNQNQHENDITHNLLSDTCPRFILGLLDAGKAHLQRQVKPEAWLSHGPSPGPGHLQLVCHVSGFYPKPVWVMWMRGEQEQQGTQRGDILPSADGTWYLRATLEVAAGEAADLSCRVKHSSLEGQDIVLYW",

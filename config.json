@@ -15,7 +15,8 @@
         "water_structures": "output/structures/water",
         "hetatm_structures": "output/structures/hetatm",
         "receptor_structures": "output/structures/receptors",
-        "information": "output/structures/information"
+        "information": "output/structures/information",
+        "stcrdab_information": "output/structures/stcrdab_information"
     },
     "structure_facets": [
         "extracellular_domain",
@@ -34,8 +35,11 @@
         "antigenic_lipid": "C",
         "spacer_lipid1": "F",
         "spacer_lipid2": "G",
-        "receptor_alpha": "D",
-        "receptor_beta": "E"
+        "tcr_alpha": "D",
+        "tcr_gamma": "D",
+        "nanobody": "D",
+        "tcr_beta": "E",
+        "tcr_delta": "E"
     },
     "canonical_structures": {
         "alignment": "1onq_alignment",
@@ -47,20 +51,20 @@
     "isoforms": ["cd1a", "cd1b", "cd1c", "cd1d"],
     "abd_breakpoints":{
         "cd1a": {
-            "alpha2end": "RQV",
-            "alpha3start": ["KPE"]
+            "alpha2end": "RQ",
+            "alpha3start": ["VKPE"]
         },
         "cd1b": {
-            "alpha2end": "RQV",
-            "alpha3start": ["KPE"]
+            "alpha2end": "RQ",
+            "alpha3start": ["VKPE"]
         },
         "cd1c": {
-            "alpha2end": "RQV",
-            "alpha3start": ["KPE","RPE"]
+            "alpha2end": "RQ",
+            "alpha3start": ["VKPE","VRPE"]
         },
         "cd1d": {
-            "alpha2end": "KQV",
-            "alpha3start": ["KPK"]
+            "alpha2end": "KQ",
+            "alpha3start": ["VKPK"]
         }
     },
     "sequences": {

@@ -7,6 +7,8 @@
         "canonical_structures": "input/canonical_structures",
         "raw_structures": "tmp/structures/raw",
         "aligned_structures": "output/structures/aligned",
+        "cleaned_structures": "output/structures/cleaned",
+        "relettered": "output/structures/relettered",
         "extracellular_domain_structures": "output/structures/extracellular_domains",
         "antigen_binding_domain_structures": "output/structures/antigen_binding_domains",
         "lipid_structures": "output/structures/lipids",
@@ -15,14 +17,6 @@
         "receptor_structures": "output/structures/receptors",
         "information": "output/structures/information"
     },
-    "canonical_structures": {
-        "alignment": "1onq_alignment",
-        "cd1a": "1onq",
-        "cd1b": "1gzp",
-        "cd1c": "3ov6",
-        "cd1d": "1zt4"
-    }, 
-    "isoforms": ["cd1a", "cd1b", "cd1c", "cd1d"], 
     "structure_facets": [
         "extracellular_domain",
         "antigen_binding_domain",
@@ -31,22 +25,42 @@
         "hetatm",
         "receptor"
     ],
+    "chain_letters": {
+        "cd1a": "A",
+        "cd1b": "A",
+        "cd1c": "A",
+        "cd1d": "A",
+        "b2m": "B",
+        "antigenic_lipid": "C",
+        "spacer_lipid1": "F",
+        "spacer_lipid2": "G",
+        "receptor_alpha": "D",
+        "receptor_beta": "E"
+    },
+    "canonical_structures": {
+        "alignment": "1onq_alignment",
+        "cd1a": "1onq",
+        "cd1b": "1gzp",
+        "cd1c": "3ov6",
+        "cd1d": "1zt4"
+    }, 
+    "isoforms": ["cd1a", "cd1b", "cd1c", "cd1d"],
     "abd_breakpoints":{
         "cd1a": {
             "alpha2end": "RQV",
-            "alpha3start": "KPE"
+            "alpha3start": ["KPE"]
         },
         "cd1b": {
             "alpha2end": "RQV",
-            "alpha3start": "KPE"
+            "alpha3start": ["KPE"]
         },
         "cd1c": {
             "alpha2end": "RQV",
-            "alpha3start": "KPE"
+            "alpha3start": ["KPE","RPE"]
         },
         "cd1d": {
             "alpha2end": "KQV",
-            "alpha3start": "KPK"
+            "alpha3start": ["KPK"]
         }
     },
     "sequences": {

@@ -3,7 +3,7 @@ import requests
 import gzip
 import os
 
-from shared import load_config, load_structure_information
+from shared import load_config, load_structures_data
 
 def fetch_structures():
     """
@@ -21,7 +21,7 @@ def fetch_structures():
     
     #TODO: get list of PDB codes from config
 
-    structures = load_structure_information()
+    structures = load_structures_data()
 
     pdb_codes = list(set([structure['pdb_code'].split('_')[0].lower() for structure in structures]))
 

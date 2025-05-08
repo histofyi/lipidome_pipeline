@@ -3,6 +3,9 @@ import csv
 import os
 import json
 
+from Bio.PDB.Structure import Structure
+from Bio.PDB.PDBParser import PDBParser
+
 
 def load_json(file_path:str) -> Tuple[Union[Dict, List], bool, List[str]]:
     """
@@ -46,7 +49,28 @@ def load_config() -> Tuple[Dict, bool, List[str]]:
     return config, success, errors
 
 
-def load_structure_information() -> List[Dict]:
+def generate_facet_folder_path(config: Dict[str, Union[str, List[str]]], facet: str, isoform:str) -> str:
+    """
+    Generate the folder path for a given facet and isoform
+
+    Args:
+        config (Dict[str, Union[str, List[str]]]): Configuration dictionary
+        facet (str): The facet for which to generate the folder path
+        isoform (str): The isoform for which to generate the folder path
+    
+    Returns:
+        str: The generated folder path
+    """
+    if facet not in config['structure_facets']:
+        pathkey = facet
+    else:
+        pathkey = f"{facet}_structures"
+    base_path = config['paths'][pathkey]
+    folder_path = f"{base_path}/{isoform}"
+    return folder_path
+
+
+def load_structures_data(parsed:bool=True) -> List[Dict]:
     """
     Load structure information from a TSV file.
 
@@ -59,7 +83,45 @@ def load_structure_information() -> List[Dict]:
         with open(information_filepath, 'r') as f:
             reader = csv.DictReader(f, delimiter='\t')
             structures = [row for row in reader]
+        if parsed:
+            structures = [parse_structure_information(structure) for structure in structures if not '_' in structure['pdb_code']]
     else:
         structures = []
         print(f"File {information_filepath} does not exist.")
     return structures
+
+
+def parse_structure_information(structure: Dict) -> Dict:
+    """
+    Parse structure information and return relevant details.
+
+    Args:
+        structure (Dict): A dictionary containing structure information.
+
+    Returns:
+        Dict: A dictionary containing parsed structure information.
+    """
+    parsed_structure = {}
+    parsed_structure['pdb_code'] = structure['pdb_code'].lower()
+    parsed_structure['isoform'] = structure['isoform']
+    parsed_structure['lipid_names'] = []
+    if structure['antigenic_pdb_ligand_code'] != '' or structure['antigenic_pdb_lipid_code'] != 'ENDOG':
+        parsed_structure['lipid_names'].append(structure['antigenic_pdb_ligand_code'])
+    if structure['spacer_pdb_ligand_code1'] != '':
+        parsed_structure['lipid_names'].append(structure['spacer_pdb_ligand_code1'])
+    if structure['spacer_pdb_ligand_code2'] != '':
+        parsed_structure['lipid_names'].append(structure['spacer_pdb_ligand_code2'])
+    if structure['receptors'] != '':
+        parsed_structure['receptors'] = structure['receptors']
+    else:
+        parsed_structure['receptors'] = None
+    return parsed_structure
+
+
+def load_structure(facet:str, isoform:str, pdb_code:str) -> Structure:
+    parser = PDBParser(QUIET=True)
+    structure = parser.get_structure(pdb_code, f"output/structures/{facet}/{isoform}/{pdb_code}.pdb")
+    if structure:
+        return structure
+    else:
+        return None

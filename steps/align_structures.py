@@ -4,7 +4,7 @@ import os
 
 from pymol import cmd
 
-from shared import load_config, load_structure_information
+from shared import load_config, load_structures_data
 
 
 # Constants for labels
@@ -100,7 +100,7 @@ def align_canonical_structures(config: Dict[str, Union[str, List[str]]]) -> None
 
 def align_isoform_structures(config: Dict[str, Union[str, List[str]]]) -> None:
 
-    structures = load_structure_information()
+    structures = load_structures_data(parsed=False)
     isoforms = config['isoforms']
 
     isoform_structures = {}

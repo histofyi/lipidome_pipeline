@@ -27,14 +27,16 @@
         "receptor"
     ],
     "chain_letters": {
+        "cd1": "A",
         "cd1a": "A",
         "cd1b": "A",
         "cd1c": "A",
         "cd1d": "A",
+        "single_chain_construct": "A",
         "b2m": "B",
         "antigenic_lipid": "C",
-        "spacer_lipid1": "F",
-        "spacer_lipid2": "G",
+        "spacer_lipid1": "X",
+        "spacer_lipid2": "Y",
         "tcr_alpha": "D",
         "tcr_gamma": "D",
         "nanobody": "D",

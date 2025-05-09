@@ -66,7 +66,10 @@ def generate_facet_folder_path(config: Dict[str, Union[str, List[str]]], facet: 
     else:
         pathkey = f"{facet}_structures"
     base_path = config['paths'][pathkey]
-    folder_path = f"{base_path}/{isoform}"
+    if isoform:
+        folder_path = f"{base_path}/{isoform}"
+    else:
+        folder_path = base_path
     return folder_path
 
 
@@ -105,12 +108,16 @@ def parse_structure_information(structure: Dict) -> Dict:
     parsed_structure['pdb_code'] = structure['pdb_code'].lower()
     parsed_structure['isoform'] = structure['isoform']
     parsed_structure['lipid_names'] = []
+    parsed_structure['lipid_roles'] = {}
     if structure['antigenic_pdb_ligand_code'] != '' or structure['antigenic_pdb_lipid_code'] != 'ENDOG':
         parsed_structure['lipid_names'].append(structure['antigenic_pdb_ligand_code'])
+        parsed_structure['lipid_roles'][structure['antigenic_pdb_ligand_code']] = 'antigenic_lipid'
     if structure['spacer_pdb_ligand_code1'] != '':
         parsed_structure['lipid_names'].append(structure['spacer_pdb_ligand_code1'])
+        parsed_structure['lipid_roles'][structure['spacer_pdb_ligand_code1']] = 'spacer_lipid1'
     if structure['spacer_pdb_ligand_code2'] != '':
         parsed_structure['lipid_names'].append(structure['spacer_pdb_ligand_code2'])
+        parsed_structure['lipid_roles'][structure['spacer_pdb_ligand_code2']] = 'spacer_lipid2'
     if structure['receptors'] != '':
         parsed_structure['receptors'] = structure['receptors']
     else:

@@ -16,7 +16,8 @@
         "hetatm_structures": "output/structures/hetatm",
         "receptor_structures": "output/structures/receptors",
         "information": "output/structures/information",
-        "stcrdab_information": "output/structures/stcrdab_information"
+        "stcrdab_information": "output/structures/stcrdab_information",
+        "pdbe_information": "output/structures/pdbe_information"
     },
     "structure_facets": [
         "extracellular_domain",

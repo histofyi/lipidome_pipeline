@@ -17,7 +17,8 @@
         "receptor_structures": "output/structures/receptors",
         "information": "output/structures/information",
         "stcrdab_information": "output/structures/stcrdab_information",
-        "pdbe_information": "output/structures/pdbe_information"
+        "pdbe_information": "output/structures/pdbe_information",
+        "chain_mappings": "output/structures/chain_mappings"
     },
     "structure_facets": [
         "extracellular_domain",

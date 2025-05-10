@@ -5,8 +5,7 @@ import json
 
 from Bio.PDB.PDBParser import PDBParser
 from Bio.PDB.Structure import Structure
-from Bio.PDB.PDBIO import PDBIO
-from Bio.PDB import Select
+
 from Bio.PDB.Polypeptide import three_to_one
 
 from Levenshtein import distance
@@ -205,10 +204,9 @@ def process_structure(config: Dict[str, Union[str, List[str]]], pdb_code:str, is
 
 
 
-def clean_structures():
+def categorise_structure_chains():
     '''
-    This function cleans the structures by removing hetatoms, water, and relettering chains.
-    It also stores information about the chains in a JSON file.
+    This function categorises the chains in the structures by assigning roles to them and whether they need remapping or relettering.
 
     Arguments:
         None
@@ -241,8 +239,7 @@ def clean_structures():
 
         # Process the structure
         structure_info, errors = process_structure(config, pdb_code, isoform, lipid_names, lipid_roles)
-        #print (f"Structure information: {json.dumps(structure_info, indent=4)}")
-
+        
         # Look at remapping and relettering the chains/lipids
         
         mappings = {}
@@ -261,8 +258,9 @@ def clean_structures():
         
         print (f"Mappings needed: {json.dumps(mappings, indent=4)} \n")
         
-
-            
+        mapping_file = f"{generate_facet_folder_path(config, 'chain_mappings', None)}/{pdb_code}.json"
+        with open(mapping_file, 'w') as f:
+            json.dump(mappings, f, indent=4)    
         
 
         # Add the errors to the log for the step
@@ -275,20 +273,14 @@ def clean_structures():
 
 
 if __name__ == "__main__":
-    clean_structures()
+    categorise_structure_chains()
 
 
 
 
 # Steps 
 
-
-# Analysing chains
-
-# Removing hetatoms which are not lipids
-# Removing water
-
-# Relettering chains
+# Analysing chains - done
 
 # Storing information about the chains (including previous lettering)
 

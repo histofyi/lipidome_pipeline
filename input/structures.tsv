@@ -57,7 +57,6 @@ pdb_code	antigenic_pdb_ligand_code	spacer_pdb_ligand_code1	spacer_pdb_ligand_cod
 4EN3	AGH			alpha_beta_nk		cd1d	human	2.57
 3VWK	4GH			alpha_beta_nk		cd1d	human	2.94
 3VWJ	DB3			alpha_beta_nk		cd1d	human	3.09
-4EI5	CIS			alpha_beta_nk		cd1d	human	3.1
 3U0P	LSC	UND	HEX			cd1d	human	2.8
 3TZV	LSC	D12	HEX	alpha_beta_nk		cd1d	human	3.06
 3SDX	GCY			alpha_beta_nk		cd1d	human	3.12

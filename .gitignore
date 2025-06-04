@@ -179,3 +179,7 @@ output/
 tmp/
 logs/
 
+
+
+# secrets
+secrets.json

@@ -47,6 +47,45 @@ def fetch_pdbe_molecules_data(config:Dict, pdb_code:str, tmp_dir:str) -> Dict:
     return content
 
 
+def fetch_pdbe_publications_data(config:Dict, pdb_code:str, tmp_dir:str) -> Dict:
+    """
+    Fetch the PDBE publication information for a given PDB code.
+
+    Args:
+        config (Dict): The configuration dictionary.
+        pdb_code (str): The PDB code to fetch the summary for.
+        tmp_dir (str): The directory to save the summary data.
+
+    Returns:
+        Dict: The PDBE molecule data.
+    """
+
+    tmp_file = f"{tmp_dir}/{pdb_code}_publication.json"
+    
+
+    content = None
+    if os.path.exists(tmp_file):
+        with open(tmp_file, 'r') as f:
+            content = json.load(f)
+            
+    else:
+        print (f"Fetching PDBE publications data for PDB code {pdb_code}")
+                
+        url = f"https://www.ebi.ac.uk/pdbe/api/pdb/entry/publications/{pdb_code}"
+        response = requests.get(url)
+        if response.status_code == 200:
+            content = response.json()
+            if len(content) > 0:
+                # Parse the content to extract the summary data
+                print (content)
+                with open(tmp_file, 'w') as f:
+                    json.dump(content, f, indent=4)
+                
+            else:
+                print (f"No publications data found for PDB code {pdb_code}.")
+
+    return content
+
 def parse_protein_data(entry:Dict) -> Dict:
     """
     Parse the PDBE protein data to extract relevant information.
@@ -146,12 +185,12 @@ def parse_molecules_data(content:Dict, pdb_code:str) -> Dict:
 
 
 
-def fetch_pdbe_molecules() -> List[Dict]:
+def fetch_pdbe_information() -> List[Dict]:
     """
-    Fetch PDBE molecules data for all PDB codes in the CSV file.
+    Fetch PDBE information for all PDB codes in the CSV file.
 
     Returns:
-        List[Dict]: A list of dictionaries containing PDBE molecules data.
+        List[Dict]: A list of dictionaries containing PDBE data.
     """
     config, success, errors = load_config()
     if not success:
@@ -179,11 +218,19 @@ def fetch_pdbe_molecules() -> List[Dict]:
                     json.dump(parsed_data, f, indent=4)
             else:
                 print (f"No molecules data found for PDB code {pdb_code}.")
+            
+            content = fetch_pdbe_publications_data(config, pdb_code, tmp_dir)
+            if content:
+                output_file = f"{config['paths']['pdbe_information']}/{pdb_code}_publcation.json"
+                with open(output_file, 'w') as f:
+                    json.dump(content, f, indent=4)
+            else:
+                print (f"No publications data found for PDB code {pdb_code}.")
+
 
     return []
 
 
 
 if __name__ == "__main__":
-    # Fetch STCRDAB summaries
-    fetch_pdbe_molecules()
+    fetch_pdbe_information()
